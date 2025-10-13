@@ -1,0 +1,21 @@
+div p {
+    color: darkorchid;
+    background-color: lawngreen;
+    text-align: center;
+}
+
+ul>li {
+    color: darkorange;
+    background-color: lightgray;
+    text-align: center;
+}
+
+a:hover {
+    color: crimson;
+    text-decoration: underline;
+}
+
+input[type="text"] {
+    border: 2px solid darkorange;
+    padding: 5px;
+}
