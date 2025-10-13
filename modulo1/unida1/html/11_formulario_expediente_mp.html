@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Capacitaci&oacute;n RR.HH.</title>
+</head>
+
+<body>
+    <p>Registro de Capacitaci&oacute;n de Empleados</p>
+    <form action="procesar_capacitacion.php" method="post">
+        <table>
+            <tr>
+                <th>
+                    <label for="nombre_empleado">Nombre del Empleado:</label>
+                    <input type="text" id="nombre_empleado" name="nombre_empleado">
+                </th>
+                <th>
+                    <label for="correo_corporativo">Correo Corporativo:</label>
+                    <input type="text" id="correo_corporativo" name="correo_corporativo">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label for="fecha_inicio">Fecha de Inicio de Capacitaci&oacute;n:</label>
+                    <input type="date" id="fecha_inicio" name="fecha_inicio">
+                </th>
+                <th>
+                    <label for="departamento">Departamento:</label>
+                    <select id="departamento" name="departamento">
+                        <option value="">Seleccione...</option>
+                        <option value="ventas">Ventas</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="finanzas">Finanzas</option>
+                        <option value="tecnologia">Tecnolog&iacute;a</option>
+                        <option value="rrhh">RR.HH.</option>
+                    </select>
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="tipo_capacitacion">Tipo de Capacitaci&oacute;n:</label>
+                    <input type="radio" id="obligatoria" name="tipo_capacitacion" value="obligatoria"><label for="obligatoria">Obligatoria</label>
+                    <input type="radio" id="voluntaria" name="tipo_capacitacion" value="voluntaria"><label for="voluntaria">Voluntaria</label>
+                </td>
+                <td>
+                    <label for="modalidad">Modalidad:</label>
+                    <select id="modalidad" name="modalidad">
+                        <option value="">Seleccione...</option>
+                        <option value="presencial">Presencial</option>
+                        <option value="virtual">Virtual</option>
+                        <option value="mixta">Mixta</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="objetivos">Comentarios/Objetivos:</label>
+                    <textarea id="objetivos" name="objetivos" rows="2"></textarea>
+                </td>
+                <td>
+                    <input type="checkbox" id="confirmacion" name="confirmacion" required>
+                    <label for="confirmacion">Confirmo mi asistencia y entendimiento de las condiciones</label>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <input type="reset" value="Limpiar Formulario">
+        <input type="submit" value="Registrar Capacitaci&oacute;n">
+    </form>
+</body>
+</html>
