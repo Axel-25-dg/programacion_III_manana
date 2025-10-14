@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contacto - Recursos Humanos</title>
+</head>
+
+<body bgcolor="#FAFAFA">
+    <header>
+        <h1>Contacto con Recursos Humanos</h1>
+        <p><strong>¿Tienes dudas, sugerencias o deseas aplicar a una vacante?</strong></p>
+        <hr>
+    </header>
+
+    <nav>
+        <table border="1" cellpadding="6" cellspacing="0" bgcolor="#E0F7FA" width="100%">
+            <tr>
+                <td><a href="index.html">Inicio</a></td>
+                <td><a href="acerca.html">Acerca</a></td>
+                <td><a href="servicios.html">Servicios</a></td>
+                <td><a href="contacto.html">Contacto</a></td>
+                <td><a href="tabla.html">Tabla</a></td>
+            </tr>
+        </table>
+        <br>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Formulario de contacto</h2>
+            <form action="#" method="post">
+                <fieldset bgcolor="#FFFDE7">
+                    <legend><strong>Información personal</strong></legend>
+
+                    <label for="nombre">Nombre completo:</label><br>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+
+                    <label for="email">Correo electrónico:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="telefono">Teléfono:</label><br>
+                    <input type="tel" id="telefono" name="telefono"><br><br>
+
+                    <label for="edad">Edad:</label><br>
+                    <input type="number" id="edad" name="edad" min="18" max="120"><br><br>
+
+                    <label for="fecha">Fecha de consulta:</label><br>
+                    <input type="date" id="fecha" name="fecha"><br><br>
+
+                    <label for="motivo">Motivo de consulta:</label><br>
+                    <select id="motivo" name="motivo">
+                        <option value="">Seleccione una opción</option>
+                        <option value="vacante">Aplicar a vacante</option>
+                        <option value="consulta">Consulta general</option>
+                        <option value="sugerencia">Sugerencia</option>
+                    </select><br><br>
+                </fieldset>
+
+                <br>
+
+                <fieldset bgcolor="#FFF3E0">
+                    <legend><strong>Preferencias</strong></legend>
+                    <p>¿Área de interés?</p>
+                    <label for="seleccion"><input type="radio" id="seleccion" name="area" value="seleccion">
+                        Selección</label><br>
+                    <label for="formacion"><input type="radio" id="formacion" name="area" value="formacion">
+                        Formación</label><br>
+                    <label for="nomina"><input type="radio" id="nomina" name="area" value="nomina">
+                        Nómina</label><br><br>
+
+                    <label for="newsletter"><input type="checkbox" id="newsletter" name="newsletter" value="si"> Deseo
+                        recibir novedades</label>
+                </fieldset>
+
+                <br>
+
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="4" cols="50"
+                    placeholder="Escribe tu consulta aquí..."></textarea><br><br>
+
+                <p><small>Los campos marcados con * son obligatorios.</small></p>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <address>
+            Departamento de Recursos Humanos<br>
+            Contacto: <a href="mailto:rrhh@empresa.com">rrhh@empresa.com</a>
+        </address>
+        <p><small>&copy; Departamento de RR.HH.</small></p>
+    </footer>
+</body>
+
+</html>
