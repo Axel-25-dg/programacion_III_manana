@@ -1,0 +1,28 @@
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 2px solid red;
+    padding: 10px;
+    gap: 10px;
+    background-color: violet;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item {
+    background-color: lightblue;
+    border: 2px solid blue;
+    padding: 20px;
+    flex: 1 1 100px;
+    text-align: center;
+}
+
+.item_especial {
+    align-self: flex-start;
+    background-color: lightcoral;
+    padding: 20px;
+    border: 2px solid green;
+    flex: 1 1 100px;
+    text-align: center;
+}

@@ -1,0 +1,11 @@
+.fondo{
+    color: rgb(31, 0, 73);
+    background-image: url("fondo_mp.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: aqua;
+    padding: 200px;
+    opacity: 0.9;
+    text-align: center;
+    font-size: 60px;
+}
