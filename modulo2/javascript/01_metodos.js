@@ -1,0 +1,1 @@
+console.log("Hola un archivo externo de Js")

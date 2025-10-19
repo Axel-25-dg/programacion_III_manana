@@ -1,0 +1,1 @@
+console.log("Recursos Humanos: archivo JS externo activo")
