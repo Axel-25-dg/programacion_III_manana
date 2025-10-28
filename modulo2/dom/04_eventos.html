@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
 
-    <script src="03_cambio_estilos.js" defer></script>
-    <style>
-        .boton {
-            background-color: blue;
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-        }
-    </style>
+    <script src="04_eventos.js" defer></script>
 </head>
 
 <body>
-    <h1 id="mensaje">TEXTO ORIGINAL</h1>
-    <a id="link" href="#"> Link</a>
+    <div id="contenedor"></div>
+    <button id="crear">Crear Evento</button>
+    <button id="eliminar">Eliminar Evento</button>
+    <button onclick="alert('Hola con javascript inline')">Hello con Javascript</button>
+    <button onclick="saludar('Hola desde una función')">Hello desde una función</button>
+    <p id="parrafo">Hacer doble click </p>
+    <form id="formulario" style="margin-top: 20px;">
+        <input type="text" id="nombre" placeholder="Incluye nombre" />
+        <button type="submit">Enviar</button>
+
+    </form>
 </body>
 
 </html>

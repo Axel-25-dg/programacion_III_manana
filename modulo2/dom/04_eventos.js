@@ -1,7 +1,23 @@
-const mensaje = document.getElementById("mensaje");
-mensaje.textContent = "Mensaje Actualizado"
-mensaje.style.color = "blue";
+let parrafo = null;
+document.getElementById('crear').addEventListener('click', () => {
+    parrafo = document.createElement('p');
+    parrafo.textContent = "Párrafo dinámico desde Javascript";
+    document.getElementById('contenedor').appendChild(parrafo);
+});
+document.getElementById('eliminar').addEventListener('click', () => {
+    if (parrafo) parrafo.remove();
+})
 
-const link = document.getElementById('link');
-link.setAttribute = ('href', 'https://www.google.com');
-link.classList.add("boton");
+function saludar() {
+    alert("Hola desde la función");
+}
+
+document.getElementById('parrafo')
+    .addEventListener('dblclick', () => {
+        alert("se hizo doble click en el parrafo")
+    })
+
+document.getElementById('nombre')
+    .addEventListener('input', (e) => {
+        console.log("escribiendo", e.target.value)
+    })
