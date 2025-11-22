@@ -1,4 +1,4 @@
-import { Vehiculo, Moto } from "./11_herencia";
+import { Vehiculo, Moto } from "./11_herencias";
 
 const miCarro = new Vehiculo('Toyota', 'Sedan');
 console.log(miCarro.marca);

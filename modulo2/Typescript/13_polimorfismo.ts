@@ -1,4 +1,4 @@
-import { Vehiculo } from "./11_herencia";
+import { Vehiculo } from "./11_herencias";
 
 export class Camion extends Vehiculo {
     getCapacidadCarga(): void {
