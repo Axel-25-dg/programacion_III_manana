@@ -22,29 +22,27 @@ export class BasicsController {
     }
 
     @Put(':id')
-    update(@Body() bodyPost: object,
+        update(@Body() bodyPost: object,
         @Param('id') id: string
     ) {
         return this.basicsService.putFunction(bodyPost, id);
     }
-
-    @Delete(':id')
+    
+    @Delete(':id/:nombre/:apellido')
     delete(@Param('id') id: string) {
         return this.basicsService.deleteFunction(id);
     }
 
     @Post('calculo-area-triangulo')
     calculoTriangulo(@Body() bodyPost: object) {
-        return this.basicsService.calculoAreaTriangulo(bodyPost);
+        return this.basicsService.calculoTriangulo(bodyPost);
     }
 
-    @Post('calculo-area-triangulo')
+    @Get('calculo-area-rectangulo/:ancho/:alto')
     areaRectangulo(
         @Param('ancho') ancho: number,
-        @Param('alto') alto: number
+        @Param('alto') alto: number,
     ) {
         return this.basicsService.areaRectangulo(ancho, alto);
     }
-
-    
 }

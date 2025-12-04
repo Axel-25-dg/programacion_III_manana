@@ -21,7 +21,7 @@ import { BasicsModule } from './basics/basics.module';
       database: process.env.DB_NAME,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
-      // ssl: { rejectUnauthorized: false },
+      //ssl: { rejectUnauthorized: false },
     }),
     AuthModule,
     BasicsModule,
@@ -32,4 +32,5 @@ import { BasicsModule } from './basics/basics.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
+  
