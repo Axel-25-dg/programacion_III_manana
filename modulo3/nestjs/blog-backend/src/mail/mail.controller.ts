@@ -25,5 +25,9 @@ export class MailController {
         return new SuccessResponseDto('Correo enviado con SendGrid', result);
     }
 
-
+    @Post('resend')
+    async sendMailWithResend(@Body() dto: SendMailDto) {
+        const result = await this.mailService.sendWithResend(dto);
+        return new SuccessResponseDto('Correo enviado con Resend', result);
+    }
 }
