@@ -75,7 +75,7 @@ function App() {
 }
 export default App;
 */
-
+/* 
 import ParentInputNotifier from './Props/ParentInputNotifier';
 import ParentUserList from './Props/ParentUserList';
 
@@ -91,5 +91,60 @@ function App() {
   );
 }
 export default App;
+*/
+
+import AccessWithLimit from "./useState/AccessWithLimit";
+import CheckboxSummary from "./useState/CheckboxSummary";
+import DocumentTitleChanger from "./useState/DocumentTitleChanger";
+import HoverFont from "./useState/HoverFont";
+import LoginWithLimit from "./useState/LoginWithLimit";
+import PostLikes from "./useState/PostLikes";
+import LanguageSwitcher from "./useState/LanguageSwitcher";
+import MultiSwitch from "./useState/MultiSwitch";
+import AutoCounter from "./useState/AutoCounter";
+import DynamicColor from "./useState/DynamicColor";
+import ClickHistory from "./useState/ClickHistory";
 
 
+function App() {
+  return (
+    <>
+      <HoverFont />
+      <br />
+      <br />
+      <AccessWithLimit />
+      <br />
+      <br />
+      <LoginWithLimit />
+      <br />
+      <br />
+      <DocumentTitleChanger />
+      <br />
+      <br />
+      <PostLikes />
+      <br />
+      <br />
+      <CheckboxSummary />
+      <br />
+      <br />
+      <LanguageSwitcher />
+      <br />
+      <br />
+      <MultiSwitch />
+      <br />
+      <br />
+      <AutoCounter />
+      <br />
+      <br />
+      <AutoCounter />
+      <br />
+      <br />
+      <DynamicColor />
+      <br />
+      <br />
+      <ClickHistory />
+
+    </>
+  );
+}
+export default App;
