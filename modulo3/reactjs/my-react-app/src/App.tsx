@@ -93,6 +93,8 @@ function App() {
 export default App;
 */
 
+/*
+
 import AccessWithLimit from "./useState/AccessWithLimit";
 import CheckboxSummary from "./useState/CheckboxSummary";
 import DocumentTitleChanger from "./useState/DocumentTitleChanger";
@@ -148,3 +150,86 @@ function App() {
   );
 }
 export default App;
+
+*/
+
+/*
+
+import LogEffect from './useEffect/LogEffect';
+import FetchUser from './useEffect/FetchUser';
+import Clock from './useEffect/Clock';
+import ScrollLogger from './useEffect/ScrollLoger';
+import DynamicTitle from './useEffect/DynamycTitle';
+import SafeFetch from './useEffect/SafeFetch';
+import PersistCounter from './useEffect/PersistCounter';
+
+function App() {
+  return (
+    <div>
+      <LogEffect />
+      <FetchUser />
+      <Clock />
+      <ScrollLogger />
+      <DynamicTitle />
+      <br />
+      <br />
+      <br />
+      <SafeFetch />
+      <br />
+      <PersistCounter />
+    </div>
+  );
+}
+
+export default App;
+*/
+/*
+import { useState } from 'react';
+import { LanguageContext } from './useContext/LanguageContext';
+import LanguageToggle from './useContext/LanguageToggle';
+
+export default function App() {
+  const [lang, setLang] = useState('es');
+  const toggleLanguage = () => setLang(prev => (prev === 'es' ? 'en' : 'es'));
+
+  return (
+    <LanguageContext.Provider value={{ lang, toggleLanguage }}>
+      <LanguageToggle />
+    </LanguageContext.Provider>
+  );
+}
+*/
+
+/*
+import { useState } from 'react';
+import { LoginContext } from './useContext/LoginContext';
+import LoginStatus from './useContext/LoginStatus';
+
+export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const toggleLogin = () => setIsLoggedIn(prev => !prev);
+
+  return (
+    <LoginContext.Provider value={{ isLoggedIn, toggleLogin }}>
+      <LoginStatus />
+    </LoginContext.Provider>
+  );
+}
+*/
+
+import { useState } from "react";
+import { CartContext } from './useContext/CartContext';
+import type { CartItem } from './useContext/CartContext';
+import CartView from "./useContext/CartView";
+
+export default function App() {
+  const [items, setItems] = useState<CartItem[]>([]);
+  const addItem = (item: Omit<CartItem, 'id'> & { id?: number }) => setItems(prev => [...prev, { ...item, id: item.id || Date.now() }]);
+  const removeItem = (id: number) => setItems(prev => prev.filter(i => i.id !== id));
+
+  return (
+    <CartContext.Provider value={{ items, addItem, removeItem }}>
+      <CartView />
+    </CartContext.Provider>
+  );
+}
