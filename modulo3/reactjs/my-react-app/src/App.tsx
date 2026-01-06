@@ -1,11 +1,12 @@
-import TablaMultiplicar from "./UseCallBack/React";
+import FormularioDiferido from "./useDeferredValue/formularioDiferido";
+
 
 function App() {
   return (
-    <div>
-      <TablaMultiplicar />
-    </div>
+    <>
+      <FormularioDiferido />
+    </>
   );
 }
-export default App;
 
+export default App;
