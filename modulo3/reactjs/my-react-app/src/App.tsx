@@ -1,10 +1,10 @@
-import FormularioDiferido from "./useDeferredValue/formularioDiferido";
+import ListaUsuariosPaginado from "./formularios/ListaUsuariosPaginado";
 
 
 function App() {
   return (
     <>
-      <FormularioDiferido />
+      <ListaUsuariosPaginado />
     </>
   );
 }
