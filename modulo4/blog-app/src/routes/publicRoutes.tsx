@@ -1,18 +1,13 @@
+import { Home } from "../pages/public/Home";
+import { PostDetail } from "../pages/public/PostDetail";
+import PublicLayout from "../layouts/PublicLayout";
 import type { RouteObject } from "react-router-dom";
 
-const publicRoutes: RouteObject[] = [
-  {
-    path: "/login",
-    element: <div>Login Page</div>,
-  },
-  {
-    path: "/register",
-    element: <div>Register Page</div>,
-  },
-  {
-    path: "/forgot-password",
-    element: <div>Forgot Password Page</div>,
-  },
-];
-
-export default publicRoutes;
+export const publicRoutes: RouteObject = {
+  path: "/",
+  element: <PublicLayout />,
+  children: [
+    { index: true, element: <Home /> },
+    { path: "post/:id", element: <PostDetail /> },
+  ],
+};

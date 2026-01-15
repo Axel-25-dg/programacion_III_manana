@@ -1,6 +1,7 @@
-  
-import BasicTable from "./lab/DataTable";
-  
-  export default function App() {
-    return <BasicTable />;
-  }
+import { useRoutes } from "react-router-dom";
+import { appRoutes } from "./routes";
+
+export default function App() {
+  const routes = useRoutes(appRoutes);
+  return <>{routes}</>;
+}
