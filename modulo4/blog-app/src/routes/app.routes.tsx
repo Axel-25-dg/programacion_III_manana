@@ -1,9 +1,10 @@
+import type { RouteObject } from "react-router-dom";
 import { publicRoutes } from "./public.routes";
+import { privateRoutes } from "./private.routes";
 import RequireAuth from "./RequireAuth";
 import PrivateLayout from "../layouts/PrivateLayout";
-import DashboardHome from "../pages/private/DashboardHome";
 
-export const appRoutes = [
+export const appRoutes: RouteObject[] = [
   publicRoutes,
   {
     path: "/dashboard",
@@ -12,6 +13,6 @@ export const appRoutes = [
         <PrivateLayout />
       </RequireAuth>
     ),
-    children: [{ index: true, element: <DashboardHome /> }],
+    children: privateRoutes.children,
   },
 ];

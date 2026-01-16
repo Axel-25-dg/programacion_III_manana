@@ -1,4 +1,5 @@
-import { AppBar, Toolbar, Typography, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Box, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function PublicHeader() {
   return (
@@ -28,9 +29,33 @@ export default function PublicHeader() {
             <Typography variant="h6">BlogApp</Typography>
           </Box>
 
-          <Typography variant="body2" sx={{ opacity: 0.85 }}>
-            Parte pública
-          </Typography>
+          <Box display="flex" alignItems="center" gap={2}>
+            <Button 
+              component={Link} 
+              to="/" 
+              color="inherit"
+              sx={{ textTransform: "none" }}
+            >
+              Home
+            </Button>
+            <Button 
+              component={Link} 
+              to="/auth/login" 
+              color="inherit"
+              sx={{ textTransform: "none" }}
+            >
+              Login
+            </Button>
+            <Button 
+              component={Link} 
+              to="/auth/register" 
+              color="inherit"
+              variant="outlined"
+              sx={{ textTransform: "none" }}
+            >
+              Registro
+            </Button>
+          </Box>
         </Box>
       </Toolbar>
     </AppBar>
