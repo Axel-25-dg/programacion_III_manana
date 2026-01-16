@@ -1,13 +1,13 @@
-import { Box, Typography } from "@mui/material";
+import { Alert, Stack, Typography } from "@mui/material";
 import type { JSX } from "react";
 
 export default function DashboardHome(): JSX.Element {
   return (
-    <Box>
+    <Stack spacing={2}>
       <Typography variant="h4">Dashboard</Typography>
-      <Typography variant="body1">
-        Bienvenido al panel de administración
-      </Typography>
-    </Box>
+      <Alert severity="info">
+        Este dashboard está vacío. En la siguiente página se agrega el menú lateral (Drawer).
+      </Alert>
+    </Stack>
   );
 }
