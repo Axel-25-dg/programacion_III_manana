@@ -11,7 +11,7 @@ export type AuthTokenData = {
 };
 
 export async function loginApi(payload: {
-  username: string;
+  email: string;
   password: string;
 }): Promise<string> {
   const { data } = await api.post<SuccessResponseDto<AuthTokenData>>("/auth/login", payload);

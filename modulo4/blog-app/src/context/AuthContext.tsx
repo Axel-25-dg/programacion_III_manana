@@ -2,15 +2,17 @@ import { createContext, useContext, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { loginApi, registerApi } from "../services/auth.service";
 
-type User = {
-  username: string;
+export type AuthUser = {
+  id?: string;
   email?: string;
+  username?: string;
+  role?: string;
 };
 
 type AuthContextType = {
-  user: User | null;
+  user: AuthUser | null;
   token: string | null;
-  login: (payload: { username: string; password: string }) => Promise<void>;
+  login: (payload: { email: string; password: string }) => Promise<void>;
   register: (payload: { username: string; email: string; password: string }) => Promise<void>;
   logout: () => void;
 };
@@ -18,7 +20,7 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(() => {
+  const [user, setUser] = useState<AuthUser | null>(() => {
     const raw = localStorage.getItem("auth_user");
     return raw ? JSON.parse(raw) : null;
   });
@@ -27,33 +29,44 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return localStorage.getItem("auth_token");
   });
 
-  const login = async (payload: { username: string; password: string }) => {
+  const login = async (payload: { email: string; password: string }) => {
     const token = await loginApi(payload);
+    
+    // Decodificar token para obtener datos del usuario
+    const decodedToken = JSON.parse(atob(token.split(".")[1]));
+    
+    const userData = {
+      id: decodedToken.id,
+      username: decodedToken.username,
+      email: decodedToken.email,
+      role: decodedToken.role
+    };
 
     setToken(token);
-    setUser({ username: payload.username });
+    setUser(userData);
 
     localStorage.setItem("auth_token", token);
-    localStorage.setItem(
-      "auth_user",
-      JSON.stringify({ username: payload.username })
-    );
+    localStorage.setItem("auth_user", JSON.stringify(userData));
   };
 
   const register = async (payload: { username: string; email: string; password: string }) => {
     const token = await registerApi(payload);
+    
+    // Decodificar token para obtener datos del usuario
+    const decodedToken = JSON.parse(atob(token.split(".")[1]));
+    
+    const userData = {
+      id: decodedToken.id,
+      username: decodedToken.username,
+      email: decodedToken.email,
+      role: decodedToken.role
+    };
 
     setToken(token);
-    setUser({ username: payload.username, email: payload.email });
+    setUser(userData);
 
     localStorage.setItem("auth_token", token);
-    localStorage.setItem(
-      "auth_user",
-      JSON.stringify({
-        username: payload.username,
-        email: payload.email,
-      })
-    );
+    localStorage.setItem("auth_user", JSON.stringify(userData));
   };
 
   const logout = () => {

@@ -7,7 +7,7 @@ import type { JSX } from "react";
 type LocationState = { from?: string };
 
 export default function Login(): JSX.Element {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
 
@@ -20,7 +20,7 @@ export default function Login(): JSX.Element {
     e.preventDefault();
     try {
       setError(null);
-      await login({ username, password });
+      await login({ email, password });
       navigate(state.from || "/dashboard", { replace: true });
     } catch {
       setError("Credenciales inválidas o error de servidor.");
@@ -35,10 +35,10 @@ export default function Login(): JSX.Element {
         {error ? <Alert severity="error">{error}</Alert> : null}
 
         <TextField
-          label="Email (username)"
+          label="Email"
           type="email"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
 

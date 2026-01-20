@@ -40,17 +40,14 @@ export async function getCategories(params?: {
   sort?: string;
   order?: "ASC" | "DESC";
 }): Promise<PaginationDto<CategoryDto>> {
-  const { data } = await api.get<SuccessResponseDto<PaginationDto<CategoryDto>>>("/categories", {
-    params: {
-      page: params?.page ?? 1,
-      limit: params?.limit ?? 10,
-      search: params?.search || undefined,
-      searchField: params?.searchField || undefined,
-      sort: params?.sort || undefined,
-      order: params?.order || undefined,
-    },
-  });
-  return data.data;
+  // Versión básica sin parámetros para testing
+  try {
+    const { data } = await api.get<SuccessResponseDto<PaginationDto<CategoryDto>>>("/categories");
+    return data.data;
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    throw error;
+  }
 }
 
 export async function createCategory(payload: { name: string }): Promise<CategoryDto> {
