@@ -64,3 +64,4 @@ export async function deleteCategory(id: string): Promise<CategoryDto> {
   const { data } = await api.delete<SuccessResponseDto<CategoryDto>>(`/categories/${id}`);
   return data.data;
 }
+
